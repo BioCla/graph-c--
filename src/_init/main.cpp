@@ -21,7 +21,5 @@ int main()
 	graph.AddEdge(3, 5);
 	graph.AddEdge(4, 5);
 
-	std::cout << graph.GetNeighbors(2) << std::endl;
-	
 	std::cout << graph << std::endl;
 }
