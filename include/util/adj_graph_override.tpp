@@ -6,9 +6,9 @@
 template <typename T>
 class Graph {
 	protected:
-		std::unordered_map<int, T> vertices_;
-		std::unordered_map<int, List<int>> adjacency_lists_;
-		int next_vertex_index_ = 0;
+		std::unordered_map<int, T> vertices;
+		std::unordered_map<int, List<int>> adjacency_lists;
+		int next_vertex_index = 0;
 	
 	public:
 		Graph() {}
@@ -24,11 +24,11 @@ class Graph {
 		List<int> GetNeighbors(int index) const;
 
 		friend std::ostream& operator<<(std::ostream& out, const Graph<T>& graph) {
-			out << "Vertices: " << graph.vertices_.size() << std::endl;
-			for (auto& vertex : graph.vertices_)
+			out << "Vertices: " << graph.vertices.size() << std::endl;
+			for (auto& vertex : graph.vertices)
 				out << vertex.first << ": " << vertex.second << std::endl;
 			out << "Edges: " << graph.NumEdges() << std::endl;
-			for (auto& adjacency_list : graph.adjacency_lists_)
+			for (auto& adjacency_list : graph.adjacency_lists)
 				out << adjacency_list.first << ": " << adjacency_list.second << std::endl;
 			return out;
 		}
@@ -38,7 +38,7 @@ class Graph {
 		}
 
 		T& operator[] (int index) {
-			return vertices_[index];
+			return vertices[index];
 		}
 };
 
