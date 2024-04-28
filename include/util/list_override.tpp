@@ -43,7 +43,7 @@ class List {
 		friend std::ostream& operator<<(std::ostream& out, const List<T>& list) {
 			out << "[";
 			if (list.empty()) {
-				out << "N/D"; 
+				out << ""; 
 				return out << "]";
 			}
 			Node* current = list.head;
